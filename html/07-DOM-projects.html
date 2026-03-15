@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .subscribe-button{
+            background-color: black;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 40px;
+            cursor: pointer;
+            margin-bottom: 50px;
+        }
+        .subscribed{
+            background-color: rgba(128, 128, 128, 0.219);
+            color: black;}
+        .cost-input{
+            padding: 10px;
+            font-size: 15px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            margin-right: 0px;
+        }
+        .calculate-button{
+            background-color: green;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 3px;
+        }
+    </style>
+</head>
+<body>
+    <h1>youtube subscribe button</h1>
+    <button onclick="subscribe()" class="subscribe-button">subscribe</button>
+    <p>Amazon shipping calculator</p>
+    <p>order under $40 = +$10 shipping</p>
+    <p>order over $40 = free shipping</p>
+    <input class="cost-input" type="text" placeholder="Cost of order" onkeydown="handleKeyDown(event)">
+    <button onclick="calculateShipping()" class="calculate-button">calculate</button>
+    <p class="finalcost"></p>
+    <script>
+        function subscribe(){
+            buttonElement = document.querySelector('button');
+            if(buttonElement.innerText === 'subscribe'){
+                buttonElement.innerText = 'subscribed';
+                buttonElement.classList.add('subscribed');
+            } else {
+                buttonElement.innerText = 'subscribe';
+                buttonElement.classList.remove('subscribed');
+            }
+        }
+        function handleKeyDown(event){
+
+            //all event listeners have an object event with a property called key
+            if(event.key ==='Enter'){
+                calculateShipping();
+            }
+        }
+        function calculateShipping(){
+
+            //to get value from input box
+            const ordercost = document.querySelector('input').value;
+            if(ordercost&&Number(ordercost)<='40'){
+                document.querySelector('.finalcost').innerText = `$${Number(ordercost)+10}`;
+            } else {
+                document.querySelector('.finalcost').innerText = ` $${ordercost} free shipping`;
+            }
+        }
+    </script>
+</body>
+</html>

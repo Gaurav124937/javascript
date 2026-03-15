@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/to-do-list.css">
+</head>
+<body>
+    <h1>Todo List Practice 1</h1>
+    <input class="js-input-text input-box" type="text" placeholder="Todo name">
+    <input class="date-box" type="date">
+    <button class="add-button" onclick="addTodo()">Add</button>
+
+
+    <h1>Todo List Practice 2</h1>
+    <div class="todo-input-grid">
+        <input class="js-input-text2 input-box" type="text" placeholder="Todo name">
+        <input type="date" class="js-duedate date-box">
+        <button class="add-button" onclick="addTodo2()">Add</button>
+    </div>
+    <div class="js-todo-list todo-output-grid"></div>
+    
+    <script>
+        const toDOList =[];
+        function addTodo(){
+        const inputElement = document.querySelector('.js-input-text');
+        const input = inputElement.value;
+        toDOList.push(input);
+        inputElement.value = '';
+        }
+        function addTodo2(){
+        const inputElement = document.querySelector('.js-input-text2');
+        const dueDateElement = document.querySelector('.js-duedate');
+        const dueDate = dueDateElement.value;
+        const input = inputElement.value;
+
+        //dueDate:dueDate is same as dueDate
+        toDOList.push({name:input, dueDate});
+        console.log(toDOList);
+        inputElement.value = '';
+        renderTodoList();
+        
+        // // <------------HTML Genration Approaches-------------->
+        // // adding each html line using loop through JS
+        // toDoList= [];
+        // let  list=``;
+        //  for(let i=0;i<arr.length;i++){
+        //     const todo = arr[i];
+        //     const html =`
+        //     <p>
+        //         ${todo}
+        //         <button onclick="toDoList.splice(&{i},1);">Delete</button>
+        //     </p>`;
+        //     toDoList.push(html);
+        //  }
+        //     const todoListElement = document.querySelector('.js-todo-list');
+
+        //     //joins the array elements into a single string
+        //     todoListElement.innerHTML = toDoList.join('');
+        }
+        
+        
+        // using template string to render the todo list
+        function renderTodoList(){
+        let  list=``;
+         for(let i=0;i<toDOList.length;i++){
+            const todoobject = toDOList[i];
+            //defrencing the object properties
+            //same as const name = todoobject.name; const dueDate = todoobject.dueDate;
+            const {name,dueDate } = todoobject;
+            
+            const html =`
+                <div class="todo-item-name">${name}</div> 
+                <div class="todo-item-date">${dueDate}</div>
+                <div><button class="delete-button" onclick="toDOList.splice(${i},1);
+                renderTodoList();">Delete</button></div>`;
+            list += html;
+            // toDoList.push(html);
+
+         }
+            
+            document.querySelector('.js-todo-list')
+            .innerHTML = list;
+        }
+
+    
+
+
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const arr =[1,2,'ello',true,{name:'zhangsan',age:20},[1,2,3]];
+        console.log(arr);  
+        
+        console.log(typeof arr);
+        arr.push('world');
+        console.log(arr);
+
+        arr.splice(0,3);
+        console.log(arr);
+
+        //shortcut for using const first =arr[2];
+        //array deconstructing
+        const [first,second ,third] =[1,2,'ello',true,{name:'zhangsan',age:20},[1,2,3]];
+        console.log(first,second,third);
+
+
+        function getSquare(){
+            const arr1= [1,2,3,0,4,5];
+            const squareArr = [];
+            for(let i=0;i<arr1.length;i++){
+                const num = arr1[i];
+                //loops can be break in function using return statement instead of break statement in loop
+                if(num=== 0){
+                    return squareArr;
+                }
+                squareArr.push(num*num);
+            }
+            return squareArr;
+        }
+
+        resultArr = getSquare();
+        console.log(resultArr);
+
+
+        [1,3,4,5,6,7,8,9].forEach((num,index) => {
+            console.log(num,index);
+        });
+
+
+        [1,3,4,5,6,7,8,9].forEach(function(num,index){
+            console.log(`num: ${num}, index: ${index}`);
+
+        });
+        
+        //return is used as continuue statement in forEach loop
+        //there is no alternative to break statement in forEach loop, but we can use return statement to skip the current iteration and continue with the next one
+        [1,3,4,5,6,7,8,9].forEach(function(num,index){
+            if(num % 2 === 0){
+                return; // Skip even numbers
+            }
+            console.log(`num: ${num}, index: ${index}`);
+        });
+    </script>
+</body>
+</html>

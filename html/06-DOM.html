@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>new page</h1>
+    <button>fello</button>
+    <button class="second-button">invite</button>
+    <script>
+        // // DOM manipulation example
+        // //1> change inner html
+        //     document.body.innerHTML = `<h1>Changed Content</h1>
+        //                             <button>New Button</button>`;
+
+        //     //to change title of web page
+        //     document.title = "New Title";
+
+        //     //brings all html(body) code to JS and treat it as a object
+        //     console.log(document.body);
+        //     console.log(typeof document.body);
+
+        // //2> brings entire html code(each element in html) to JS and treat it as a object
+        //     console.log(document.documentElement);
+
+        //3> gives a element from the HTML code
+            console.log(document.querySelector('button'));// gives first button element
+            
+            //all elements also have innerHTML property
+            document.querySelector('button').innerHTML = 'changed';
+
+            // a elment with specific class can be accessed as
+            console.log(document.querySelector('.second-button'));    
+    </script>       
+</body>
+</html>

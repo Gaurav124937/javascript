@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // const person = {
+        //     name: "Alice",
+        //     age: 30,
+        //     city: "New York"
+        // };
+
+        // //dot notation
+        // console.log(person.name);
+        // //bracket notation
+        // console.log(person['age']);
+        // //adding new property
+        // person.country = "USA";
+        // person['work-profession'] = "Engineer";
+        // console.log(person);
+
+        
+        
+        // //object can store different data types
+        // const product = {
+        //     id: 101,
+        //     name: "Laptop",
+        //     price: 799.99,
+        //     inStock: true,
+
+        //     //stores array
+        //     tags: ["electronics", "computer", "portable"],
+
+        //     //nested object
+        //     dimensions: {
+        //         width: 13.3,
+        //         height: 9.0,
+        //         depth: 0.8
+        //     },
+
+        //     //method
+        //     displayInfo: function display() {
+        //         return `${this.name} costs $${this.price}`;
+        //     }
+        // };
+        // console.log(product);
+        // console.log(product.displayInfo());
+        // console.log(product.tags[2]);
+        // console.log(product.dimensions.width);
+
+
+        // //buit in objects
+        // //<----------JSON---------->
+        // // simliar to JS object but used for data interchange ,more compatible across different programming languages, dont stores functions and stores key value pairs in double quotes as a String
+
+
+        // //convert JS object to JSON string
+        // const jsonString = JSON.stringify(product);
+        // console.log(jsonString);
+        // console.log(typeof jsonString);
+
+        // //convert JSON string back to JS object
+        // const jsonObject = JSON.parse(jsonString);
+        // console.log(jsonObject);
+
+
+        // //<----------localStorage---------->
+        // //store data in localStorage
+        // localStorage.setItem("user", "Bob");
+        // //retrieve data from localStorage
+        // const storedUser = localStorage.getItem("user");  
+        // console.log(storedUser); 
+
+
+        //auto boxing and unboxing with objects
+        
+        console.log('helloooo'.length); //auto boxing JS automatically converts string primitive to String object to access length property
+
+        const strObj = new String('hello world'); //explicitly creating String object
+        console.log(strObj.toUpperCase()); //using method of String object
+
+        //<---------object are refrecene------------>
+
+        //object are the refrences that refer to a set of  values stores in heap memory
+        const obj = {
+            message:'hi there',
+            name:'alix'
+        }
+
+        //copy by reference
+        const Obj1 = obj;
+
+        //example
+        //value of message property is changed while the obj is const because the refrence is constant not the actual object(values inside it)
+        obj.message = 'hello world';
+        console.log(Obj1.message);
+
+
+        // object shortcut syntax
+        const obj2= {
+            name:'John',
+            y:20,
+            price:30};
+
+            //const name = obj2.name;
+            const{name, price, y} = obj2; //called destructuring , extracts name property from obj2 and creates a variable name with its value,used when we want to extract multiple properties from an object with same variable name as property name  
+            console.log(name, price, y);
+    </script>
+</body>
+</html>
