@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../css/rock-paper-scissors.css">
+    <link rel="stylesheet" href="../css/">
 </head>
 <body>
     <h1>Rock-Paper-Scissors</h1>
-    <button onclick="playGame('rock')">Rock</button>
-    <button onclick="playGame('paper')">Paper</button>
-    <button onclick="playGame('scissors')">Scissors</button>
+    <button  class="rock-button">Rock</button>
+    <button  class="paper-button">Paper</button>
+    <button  class="scissors-button">Scissors</button>
     <p class="displayresult"></p>
     <p class="choices"></p>
     <p class="previous-score"> previous score :</p>
@@ -41,6 +41,11 @@
 
 
         //main game function
+        document.querySelector('.rock-button').addEventListener('click', () => playGame('rock'));
+        document.querySelector('.paper-button').addEventListener('click', () => playGame('paper'));
+        document.querySelector('.scissors-button').addEventListener('click', () => playGame('scissors'));
+
+
         function playGame(playerChoice){
             document.querySelector('.previous-score').innerHTML='';
 

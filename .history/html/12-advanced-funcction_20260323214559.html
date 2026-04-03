@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="function1()" class="button">Click Me</button>
+    <script>
+        const function1= function printMessage(){
+            console.log('Hello');
+        }
+
+        console.log(function1);
+        console.log(typeof function1);
+        //calling function printMessage using function1
+        function1();
+
+
+        const obj ={
+            name:"zoe",
+            //anonymous function assigned to fun property of obj
+            //passed function1 as a parameter
+                
+
+             fun:function(function1){
+                console.log('Hello2');
+                function1(); // Call the passed function
+             }
+                
+        }    
+        obj.fun(function1);
+
+
+        setTimeout(function(){
+            console.log('Timeout');
+        },5000 /*= 5 second*/);
+
+
+        setInterval(function(){
+            console.log('reapting every 3 seconds');
+        },3000 /*= 5 second*/);
+
+        console.log('in between code');
+
+        //arrow function
+        const arrowFunction = () => {
+            console.log('This is an arrow function');
+        }
+
+        //one line arrow function with implicit return
+        const add = (a,b) => a + b;
+
+        console.log(add(2,3));
+
+
+        const buttonelement= document.querys
+            
+        </script>
+</body>
+</html>

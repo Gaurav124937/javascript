@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    <button onclick="" class="button">Click Me</button>
+    <button onclick="function1()" class="button">Click Me</button>
     <script>
         // const function1= function printMessage(){
         //     console.log('Hello');
@@ -54,23 +54,15 @@
 
         // console.log(add(2,3));
 
-
-        //event listener instead of onclick attribute in html
-
-        const function1 = ()=>{
-            console.log('Button clicked');
-        }
+        const function =()=>{}
 
         const buttonelement= document.querySelector('.button');
-        buttonelement.addEventListener('click', function1);
+        buttonelement.addEventListener('click', );
 
         buttonelement.addEventListener('click', () => {
             console.log('Button clicked with arrow function and multiple event listener to one event means two different functions will be executed when the button is clicked');
         });
-        
-        //remove event listener
-
-        buttonelement.removeEventListener('click', function1);
+            
         </script>
 </body>
 </html>
