@@ -1,7 +1,7 @@
 body {
     font-family: Arial, sans-serif;
     color: white;
-    background-color: rgb(25, 25, 25);
+    background-color: rgb(243, 68, 68);
 }
 
 .title {
@@ -18,7 +18,6 @@ body {
     border: 3px solid white;
     margin-right: 10px;
     cursor: pointer;
-    margin-top: 20px;
 }
 
 .button-emoji {
@@ -58,12 +57,4 @@ body {
     border: none;
     cursor: pointer;
     margin-left: 10px;
-}
-
-.instructions {
-    color: rgb(205, 156, 50);
-    font-size: 17px;
-    margin-bottom: 20px;
-    font-family: 'Times New Roman', Times, serif;
-    line-height: 0.3;
 }

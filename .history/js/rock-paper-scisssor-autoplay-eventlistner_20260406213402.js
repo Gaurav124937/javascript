@@ -25,11 +25,11 @@ function ComputerChoice() {
 
 
         document.body.addEventListener('keydown', (event) => {
-            if (event.key === 'r' || event.key === 'R') {
+            if (event.key === 'r'  ) {
                 playGame('rock');
-            } else if (event.key === 'p' || event.key === 'P') {
+            } else if (event.key === 'p') {
                 playGame('paper');
-            } else if (event.key === 's' || event.key === 'S') {
+            } else if (event.key === 's') {
                 playGame('scissors');
             }
         });

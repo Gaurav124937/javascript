@@ -29,7 +29,7 @@ function ComputerChoice() {
                 playGame('rock');
             } else if (event.key === 'p' || event.key === 'P') {
                 playGame('paper');
-            } else if (event.key === 's' || event.key === 'S') {
+            } else if (event.key === 's') {
                 playGame('scissors');
             }
         });

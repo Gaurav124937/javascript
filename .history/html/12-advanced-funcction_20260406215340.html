@@ -57,42 +57,25 @@
 
         //event listener instead of onclick attribute in html
 
-        // const function1 = ()=>{
-        //     console.log('Button clicked');
-        // }
+        const function1 = ()=>{
+            console.log('Button clicked');
+        }
 
-        // const buttonelement= document.querySelector('.button');
-        // buttonelement.addEventListener('click', function1);
+        const buttonelement= document.querySelector('.button');
+        buttonelement.addEventListener('click', function1);
 
-        // buttonelement.addEventListener('click', () => {
-        //     console.log('Button clicked with arrow function and multiple event listener to one event means two different functions will be executed when the button is clicked');
-        // });
+        buttonelement.addEventListener('click', () => {
+            console.log('Button clicked with arrow function and multiple event listener to one event means two different functions will be executed when the button is clicked');
+        });
         
-        // //remove event listener
+        //remove event listener
 
-        // buttonelement.removeEventListener('click', function1);
+        buttonelement.removeEventListener('click', function1);
 
 
            
         //another method for array
-        console.log([1,-3,5].filter((value, index) => {
-            // if (value >= 0) {
-            //     return true;
-            // }
-            // else {  
-            //     return false;
-            // }   
-            //shortcut for above code
-            return value>=0;
-        }));
-
-        console.log([1,1,3].map((value,index) => {
-            return value*2;
-        }));
-
-        //if index is not used value can be wriiten alone,if fuction only contains single line with return it can write down without return
-
-        console.log([1,1,3].map(value => value*2));
+        [1,-3,5]
         </script>
 </body>
 </html>

@@ -25,14 +25,9 @@ function ComputerChoice() {
 
 
         document.body.addEventListener('keydown', (event) => {
-            if (event.key === 'r' || event.key === 'R') {
-                playGame('rock');
-            } else if (event.key === 'p' || event.key === 'P') {
-                playGame('paper');
-            } else if (event.key === 's' || event.key === 'S') {
-                playGame('scissors');
-            }
-        });
+
+
+
 
 
 
