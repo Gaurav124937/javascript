@@ -12,23 +12,13 @@ function saveToStorage() {
   localStorage.setItem("cart", JSON.stringify(cart));
 }
 
-function selector(productId) {
-  //makin selector interactive
-  const quantitySelector = document.querySelector(
-    `.js-quantity-selector-${productId}`,
-  );
-  console.log(quantitySelector);
-
-  const quantity = Number(quantitySelector.value);
-  return quantity;
-}
-
 export function addTocart(productId) {
   let matchingItem;
   cart.forEach((cartItem) => {
     if (cartItem.productId === productId) {
       matchingItem = cartItem;
     }
+
   });
 
   //calling selector function
