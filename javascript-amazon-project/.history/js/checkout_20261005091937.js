@@ -1,78 +1,37 @@
-<!doctype html>
-<html>
-  <head>
-    <title>Checkout</title>
+import { cart } from "../data/cart.js";
+import { product } from "../data/product.js";
 
-    <!-- This code is needed for responsive design to work.
-      (Responsive design = make the website look good on
-      smaller screen sizes like a phone or a tablet). -->
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+let cartSummaryHtml = ``;
+cart.forEach((cartItem) => {
+  const productId = cartItem.productId;
 
-    <!-- Load a font called Roboto from Google Fonts. -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
-      rel="stylesheet"
-    />
+  let matchingProduct;
+  product.forEach((product) => {
+    if ((productId = product.id)) {
+      matchingProduct = product;
+    }
+  });
 
-    <!-- Here are the CSS files for this page. -->
-    <link rel="stylesheet" href="../styles/shared/general.css" />
-    <link
-      rel="stylesheet"
-      href="../styles/pages/checkout/checkout-header.css"
-    />
-    <link rel="stylesheet" href="../styles/pages/checkout/checkout.css" />
-  </head>
-  <body>
-    <div class="checkout-header">
-      <div class="header-content">
-        <div class="checkout-header-left-section">
-          <a href="../index.html">
-            <img class="amazon-logo" src="../images/amazon-logo.png" />
-            <img
-              class="amazon-mobile-logo"
-              src="../images/amazon-mobile-logo.png"
-            />
-          </a>
-        </div>
-
-        <div class="checkout-header-middle-section">
-          Checkout (<a class="return-to-home-link" href="../index.html"
-            >3 items</a
-          >)
-        </div>
-
-        <div class="checkout-header-right-section">
-          <img src="../images/icons/checkout-lock-icon.png" />
-        </div>
-      </div>
-    </div>
-
-    <div class="main">
-      <div class="page-title">Review your order</div>
-
-      <div class="checkout-grid">
-        <div class="order-summary js-order-summary">
-          <!-- <div class="cart-item-container">
+  cartSummaryHtml+= `
+  <div class="cart-item-container">
             <div class="delivery-date">
               Delivery date: Tuesday, June 21
             </div>
 
             <div class="cart-item-details-grid">
               <img class="product-image"
-                src="../images/products/athletic-cotton-socks-6-pairs.jpg">
+                src="${matchingProduct.image}">
 
               <div class="cart-item-details">
                 <div class="product-name">
-                  Black and Gray Athletic Cotton Socks - 6 Pairs
+                  ${matchingProduct.name}
                 </div>
                 <div class="product-price">
-                  $10.90
+                  ${matchingProduct.price}
                 </div>
                 <div class="product-quantity">
                   <span>
-                    Quantity: <span class="quantity-label">2</span>
+                    Quantity: <span class="quantity-label">$cartItem.quantity}</span>
                   </span>
                   <span class="update-quantity-link link-primary">
                     Update
@@ -202,43 +161,6 @@
                 </div>
               </div>
             </div>
-          </div> -->
-        </div>
-
-        <div class="payment-summary">
-          <div class="payment-summary-title">Order Summary</div>
-
-          <div class="payment-summary-row">
-            <div>Items (3):</div>
-            <div class="payment-summary-money">$42.75</div>
           </div>
-
-          <div class="payment-summary-row">
-            <div>Shipping &amp; handling:</div>
-            <div class="payment-summary-money">$4.99</div>
-          </div>
-
-          <div class="payment-summary-row subtotal-row">
-            <div>Total before tax:</div>
-            <div class="payment-summary-money">$47.74</div>
-          </div>
-
-          <div class="payment-summary-row">
-            <div>Estimated tax (10%):</div>
-            <div class="payment-summary-money">$4.77</div>
-          </div>
-
-          <div class="payment-summary-row total-row">
-            <div>Order total:</div>
-            <div class="payment-summary-money">$52.51</div>
-          </div>
-
-          <button class="place-order-button button-primary">
-            Place your order
-          </button>
-        </div>
-      </div>
-    </div>
-    <script type="module" src="../js/checkout.js"></script>
-  </body>
-</html>
+  `;
+});
