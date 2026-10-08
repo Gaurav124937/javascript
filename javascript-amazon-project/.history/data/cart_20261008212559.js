@@ -69,7 +69,7 @@ export function removeFromCart(productId) {
 }
 
 
-export function updateDeliveryOptions(productId, deliveryOptionId) {
+export function UpdatedeliveryOptions(productId, deliveryOptionId) {
   let matchingItem;
   cart.forEach((cartItem) => {
     if (cartItem.productId === productId) {
