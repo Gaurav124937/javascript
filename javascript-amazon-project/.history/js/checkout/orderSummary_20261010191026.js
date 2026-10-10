@@ -128,7 +128,6 @@ export function renderOrderSummary() {
         const { productId, deliveryOptionId } = element.dataset;
         updateDeliveryOptions(productId, deliveryOptionId);
         renderOrderSummary();
-        renderPaymentSummary();
       });
     });
 
