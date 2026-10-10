@@ -1,3 +1,5 @@
+import { deliveryOptions } from "./deliveryOptions";
+
 export function getProduct(productId) {
   let matchingProduct;
   products.forEach((product) => {
@@ -668,3 +670,13 @@ export const products = [
   }
 ];
 
+export function getDeliveryoption(){
+  let deliveryoption;
+  
+          deliveryOptions.forEach(option => {
+              if (option.id == deliveryOptionId) {
+                  deliveryoption = option;
+              }
+          });
+  return deliveryoption || deliveryOptions[0];
+}

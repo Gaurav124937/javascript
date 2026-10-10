@@ -1,4 +1,4 @@
-export function getProduct(productId) {
+export function getProduct() {
   let matchingProduct;
   products.forEach((product) => {
     if (product.id == productId) {
@@ -667,4 +667,3 @@ export const products = [
     ]
   }
 ];
-

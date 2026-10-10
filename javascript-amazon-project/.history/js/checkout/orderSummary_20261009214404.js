@@ -1,7 +1,7 @@
 import { cart, removeFromCart, updateDeliveryOptions } from "../../data/cart.js";
 import { products, getProduct } from "../../data/products.js";
 import { formatCurrency } from "../utils/money.js";
-import { deliveryOptions, getDeliveryOption } from "../../data/deliveryOptions.js";
+import { deliveryOptions, getDeliveryoption } from "../../data/deliveryOptions.js";
 
 
 // IMPORT EXTERNAL LIBRARIES AS MODULES
@@ -21,9 +21,9 @@ export function renderOrderSummary() {
 
     const matchingProduct = getProduct(productId);
     const deliveryOptionId = cartItem.deliveryOptionId;
-    const deliveryOption = getDeliveryOption(deliveryOptionId);
+    const deliveryoption = getDeliveryoption(deliveryOptionId);
     const today = dayjs();
-    const deliveryDate = today.add(deliveryOption.deliveryDays, "days");
+    const deliveryDate = today.add(deliveryoption.deliveryDays, "days");
     const dataString = deliveryDate.format("dddd ,MMMM D");
 
 

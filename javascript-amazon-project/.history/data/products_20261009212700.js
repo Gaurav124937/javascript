@@ -667,4 +667,3 @@ export const products = [
     ]
   }
 ];
-
