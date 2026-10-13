@@ -1,9 +1,8 @@
 import { cart, removeFromCart, updateDeliveryOptions } from "../../data/cart.js";
 import { products, getProduct } from "../../data/products.js";
 import { formatCurrency } from "../utils/money.js";
-import { deliveryOptions, getDeliveryOption } from "../../data/deliveryOptions.js";
+import { deliveryOptions, getDeliveryOption, calculateDeliveryDate } from "../../data/deliveryOptions.js";
 import { renderPaymentSummary } from "./paymentSummary.js";
-
 
 // IMPORT EXTERNAL LIBRARIES AS MODULES
 // ESM version : (Emmascript modules)
@@ -12,7 +11,7 @@ import { renderPaymentSummary } from "./paymentSummary.js";
 //import {dayjs} from ' url';
 // DEFAULT EXPORT : to import (export default functionName;) part like this in an ESM js file
 // each file can have only one default export
-import dayjs from "https://unpkg.com/supersimpledev@8.5.0/dayjs/esm/index.js";
+import { renderCheckoutHeader } from "./checkoutHeader.js";
 
 export function renderOrderSummary() {
 
@@ -23,9 +22,8 @@ export function renderOrderSummary() {
     const matchingProduct = getProduct(productId);
     const deliveryOptionId = cartItem.deliveryOptionId;
     const deliveryOption = getDeliveryOption(deliveryOptionId);
-    const today = dayjs();
-    const deliveryDate = today.add(deliveryOption.deliveryDays, "days");
-    const dataString = deliveryDate.format("dddd ,MMMM D");
+    const dataString = calculateDeliveryDate(deliveryOption);
+
 
 
     cartSummaryHtml += `
@@ -75,9 +73,7 @@ export function renderOrderSummary() {
   function devliveryOptionsHTML(matchingProduct, cartItem) {
     let HTML = ``;
     deliveryOptions.forEach((deliveryOption) => {
-      const today = dayjs();
-      const deliveryDate = today.add(deliveryOption.deliveryDays, "days");
-      const dataString = deliveryDate.format("dddd ,MMMM D");
+      const dataString = calculateDeliveryDate(deliveryOption);
 
       const priceString =
         deliveryOption.priceCents === 0
@@ -119,6 +115,7 @@ export function renderOrderSummary() {
       );
       container.remove();
       renderPaymentSummary();
+      renderCheckoutHeader();
     });
   });
 
