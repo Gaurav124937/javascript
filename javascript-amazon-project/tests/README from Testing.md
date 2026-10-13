@@ -9,3 +9,9 @@ AUTOMATED TESTING :
 //TWO TYPES OF TEST CASE:
 .>Basic test cases : tests if the program works for simple inputs and expected outputs.
 .>Edge test cases : tests if the program works for extreme or unusual inputs, such as very large numbers, empty inputs, or invalid data.
+
+//---------------------TESTING FRAMEWORKS---------------------//
+type of external libraries that provide tools and functions to facilitate the testing process. They help developers write, organize, and execute tests more efficiently. Some popular testing frameworks include:
+.>JUnit (Java)
+.>jasmine (JavaScript)
+.>pytest (Python)
