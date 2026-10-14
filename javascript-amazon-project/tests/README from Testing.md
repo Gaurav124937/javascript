@@ -15,3 +15,7 @@ type of external libraries that provide tools and functions to facilitate the te
 .>JUnit (Java)
 .>jasmine (JavaScript)
 .>pytest (Python)
+
+//---------------------TESTING STRATEGIES---------------------//
+.>Mocking : creating mock objects or functions to simulate the behavior of real components, allowing for isolated testing of specific parts of the code.
+.>Stubbing : replacing a function or method with a simplified version that returns predefined values, allowing for controlled testing scenarios.
